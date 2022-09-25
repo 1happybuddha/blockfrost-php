@@ -1,0 +1,16 @@
+{
+  "name": "blockfrost/blockfrost-php",
+  "type": "library",
+  "description": "PHP composer package for the Blockfrost API",
+  "license": "MIT",
+  "keywords": ["blockfrost", "cardano"],
+  "homepage": "https://github.com/blockfrost/blockfrost-php",
+  "require": {
+    "guzzlehttp/guzzle": ">=7.0"
+  },
+  "autoload": {
+    "psr-4" : {
+			"Blockfrost\\": "blockfrost_api/"
+		}
+  }
+}

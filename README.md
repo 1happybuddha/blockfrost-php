@@ -27,29 +27,27 @@ To use this SDK, you first need login into to [blockfrost.io](https://blockfrost
 
 ###  Composer
 
-This SDK uses guzzlehttp for REST.  [Composer](https://getcomposer.org/) is the preferred package manager to import this:
+This SDK uses guzzlehttp for REST.  [Composer](https://getcomposer.org/) is the preferred package manager. However, there is not currently a packagist listing, so the following code offers an example of how to import it into your composer-based project:
 
 ###  composer.json
 
 ```json
 {
-	"require" : {
-		"guzzlehttp/guzzle" : "^7.0"
-	},
-	"autoload" : {
-		"psr-4" : {
-			"Blockfrost\\" 		  : "../blockfrost_api/"
-		}
-	},
-	"minimum-stability" : "dev",
-	"require-dev": {
-		"phpunit/phpunit": "^9.5"
-	}
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/1happybuddha/blockfrost-php.git"
+    }
+  ],
+  "require": {
+    "blockfrost/blockfrost-php": "dev-master"
+  },
+  "minimum-stability" : "dev"
 }
 ```
 
 ```console
-$ php composer.phar update
+$ composer install
 ```
 
 ## Usage
@@ -59,7 +57,7 @@ Using the SDK is pretty straight-forward as you can see from the following examp
 ### Cardano
 
 ```php
-<?php 
+<?php
 
 use Blockfrost\Block\BlockService;
 use Blockfrost\Service;
